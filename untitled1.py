@@ -3,6 +3,7 @@ import requests
 from selenium import webdriver
 from datetime import datetime,timedelta
 from datetime import date
+import sys
 def News(): 
     today = date.today()
 
@@ -11,7 +12,7 @@ def News():
     
     
     current= now.strftime("%H:%M:%S")
-    d = now - timedelta(hours=0, minutes=30)
+    d = now - timedelta(hours=0, minutes=20)
     curr2=d.strftime("%H:%M:%S")
     times=str(today)+'T'+current
     times2=str(today)+'T'+curr2
@@ -21,8 +22,8 @@ def News():
     secret='8e268e93d817478598e019b0351c567a'
     # Specify the query and number of returns
     parameters = {
-        'q': 'corona', # query phrase
-        'from': times2,
+        'q': 'soybean', # query phrase
+        'from': today,
         'to': times,
         'pageSize': 20,  # maximum is 100
         'apiKey': secret # your own API key
@@ -46,8 +47,7 @@ def News():
     
     
 
-    if len(results)!=0:
-
+    if(len(results)!=0):
         driver = webdriver.Chrome('/home/kali/Downloads/chromedriver')
     
         driver.get("https://twitter.com/login")
@@ -73,7 +73,8 @@ def News():
             tweet3=driver.find_element_by_xpath('//*[@id="layers"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div[3]/div/div/div/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[4]/div/span/span')
             tweet3.click()
             driver.implicitly_wait(1)
-       
+    else:
+        sys.exit()
 if __name__ == '__main__': 
       
     # function call 
