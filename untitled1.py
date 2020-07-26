@@ -18,7 +18,7 @@ def News():
     times2=str(today)+'T'+curr2
        
     #url = ('https://newsapi.org/v2/top-headlines?q=' + ' OR '.join(keywords)) + '&language=en' +'&from=(today)'+'&to=(times)' + '&apiKey=8e268e93d817478598e019b0351c567a' 
-    url = 'https://newsapi.org/v2/everything?'
+    url = 'https://newsapi.org/v2/top-headlines?'
     secret='8e268e93d817478598e019b0351c567a'
     # Specify the query and number of returns
     parameters = {
