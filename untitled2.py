@@ -12,6 +12,7 @@ from selenium import webdriver
 from datetime import timedelta
 # from datetime import date
 import datetime
+import sys
 
 
 
@@ -79,3 +80,5 @@ if(len(results)!=0):
             driver.implicitly_wait(1)    
 
 #print(open_page)    
+else:
+    sys.exit()
