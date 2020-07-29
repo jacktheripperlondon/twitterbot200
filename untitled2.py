@@ -78,7 +78,7 @@ if(len(results)!=0):
             tweet3=driver.find_element_by_xpath('//*[@id="layers"]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div[3]/div/div/div/div[1]/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[4]/div/span/span')
             tweet3.click()
             driver.implicitly_wait(1)    
-
+        driver.quit()
 #print(open_page)    
 else:
     sys.exit()
